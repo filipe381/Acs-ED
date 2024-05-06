@@ -1,0 +1,16 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var C, P, F int
+	fmt.Scan(&C, &P, &F)
+
+	if P >= C*F {
+		fmt.Println("S")
+	} else {
+		fmt.Println("N")
+	}
+}

@@ -1,0 +1,38 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var N int
+	fmt.Scan(&N)
+
+	for i := 0; i < N; i++ {
+		var M int
+		fmt.Scan(&M)
+
+		produtos := make(map[string]float64)
+
+		for j := 0; j < M; j++ {
+			var produto string
+			var preco float64
+			fmt.Scan(&produto, &preco)
+			produtos[produto] = preco
+		}
+
+		var P int
+		fmt.Scan(&P)
+
+		total := 0.0
+
+		for k := 0; k < P; k++ {
+			var produto string
+			var quantidade int
+			fmt.Scan(&produto, &quantidade)
+			total += produtos[produto] * float64(quantidade)
+		}
+
+		fmt.Printf("R$ %.2f\n", total)
+	}
+}
